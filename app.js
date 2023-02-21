@@ -1,4 +1,4 @@
-let countEl = document.getElementById("count-el");
+let countEl = document.getElementById("count-me");
 
 let saveEl = document.getElementById("save-el");
 
@@ -9,3 +9,17 @@ function increment(){
     count += 1;
     countEl.innerHTML = count;
 }
+
+function save(){
+    let entryCount = count + " - ";
+
+    if(count === previousCount){
+        alert("MULTIPLE ENTRIES DETECTED!!!");
+    }
+    else{
+        previousCount = count;
+        saveEl.innerHTML = saveEl.innerHTML + " " + entryCount;
+    }
+}
+
+console.log("hello world");
