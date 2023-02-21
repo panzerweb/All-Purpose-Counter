@@ -9,7 +9,7 @@ body {
 }
 
 #main-contain{
-    margin: 5rem auto;
+    margin: 2rem auto;
     width: 40%;
 }
 
@@ -37,6 +37,7 @@ body {
 
 #liveAlertPlaceholder{
     position: fixed;
-    width: 100%
-
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
 }

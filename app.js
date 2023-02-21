@@ -14,7 +14,7 @@ function save(){
     let entryCount = count + " - ";
 
     if(count === previousCount){
-        return entryCount;
+        alert("INVALID, NUMBERS MUST NOT BE REPEATED", "danger");
     }
 
     else{
@@ -40,7 +40,7 @@ const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 const alert = (message, type) => {
   const wrapper = document.createElement('div')
   wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `<div class="alert alert-${type} alert-dismissible" role="alert" style="font-size: 2rem;">`,
     `   <div>${message}</div>`,
     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     '</div>'
@@ -51,11 +51,7 @@ const alert = (message, type) => {
 
 const alertTrigger = document.getElementById('save-btn')
 if (alertTrigger) {
-  const handleClick = () => {
-    alert('Repeated Numbers is Invalid', 'success')
-    alertTrigger.removeEventListener('click', handleClick)
-  }
-
-  alertTrigger.addEventListener('click', handleClick)
+  alertTrigger.addEventListener('click', () => {
+  })
 }
 
