@@ -2,6 +2,8 @@ let countEl = document.getElementById("count-me");
 
 let saveEl = document.getElementById("save-el");
 
+let dateNow = document.getElementById("date-el");
+
 let count = 0;
 let previousCount = 0;
 
@@ -11,17 +13,22 @@ function increment(){
 }
 
 function save(){
-    let entryCount = count + " - ";
+  let currentDate = new Date();
+  let entryCount = count + " - ";
 
-    if(count === previousCount){
-        alert("INVALID, NUMBERS MUST NOT BE REPEATED", "danger");
-    }
+  dateNow.style.display = "block";
+  dateNow.innerHTML = currentDate;
 
-    else{
-        previousCount = count;
-        saveEl.innerHTML = saveEl.innerHTML + " " + entryCount;
-    }
+  if(count === previousCount){
+      alert("INVALID, NUMBERS MUST NOT BE REPEATED", "danger");
+  }
+
+  else{
+      previousCount = count;
+      saveEl.innerHTML = saveEl.innerHTML + " " + entryCount;
+  }
 }
+
 
 //CODE TO CLEAR AND SET THE COUNT INTO ZERO, RESETTING THE WHOLE FUNCTION EXCEPT FOR THE SAVE ENTRIES
 function clear(){
