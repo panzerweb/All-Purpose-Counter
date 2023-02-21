@@ -47,7 +47,7 @@ const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 const alert = (message, type) => {
   const wrapper = document.createElement('div')
   wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert" style="font-size: 2rem;">`,
+    `<div class="alert alert-${type} alert-dismissible" role="alert" style="font-size: 1.2rem;">`,
     `   <div>${message}</div>`,
     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     '</div>'
