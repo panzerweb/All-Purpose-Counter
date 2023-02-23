@@ -21,9 +21,8 @@ function save(){ //Function for the save button
 
   if(count === previousCount){
       //Sets a condition that if the numbers are save multiple times, it is invalid
-      alert("INVALID, NUMBERS MUST NOT BE REPEATED", "danger");
+      alert("INVALID, NUMBERS MUST NOT BE REPEATED, CLICK THE CLEAR BUTTON FIRST!", "danger");
   }
-
   else{
       //But if the numbers are not repeated, it executes the else statement
       previousCount = count; //assigns the count to the variable previousCount
@@ -36,7 +35,7 @@ function save(){ //Function for the save button
 function clear(){
     count = 0; //set the count to zero
     countEl.innerHTML = count; //prints the zero count
-
+    previousCount = 0; //sets the previous count to zero so you can repeat numbers if you clear a count
 }
 
 var clearButton = document.getElementById('clear-btn'); //gets the element of the button to clear
