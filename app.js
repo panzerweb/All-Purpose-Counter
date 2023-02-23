@@ -1,44 +1,47 @@
-let countEl = document.getElementById("count-me");
+let countEl = document.getElementById("count-me"); //Gets the element of the text/number for the count
 
-let saveEl = document.getElementById("save-el");
+let saveEl = document.getElementById("save-el"); //Gets the element of a text for the Save button
 
-let dateNow = document.getElementById("date-el");
+let dateNow = document.getElementById("date-el"); //Gets the element that specifies date
 
-let count = 0;
-let previousCount = 0;
+let count = 0; //initializes count to zero
+let previousCount = 0; //Checks count for comparison
 
-function increment(){
-    count += 1;
-    countEl.innerHTML = count;
+function increment(){ //Function for the Increment button, to increment count.
+    count += 1; //Adds 1 to each count.
+    countEl.innerHTML = count; //Prints the current count to the element.
 }
 
-function save(){
-  let currentDate = new Date();
-  let entryCount = count + " - ";
+function save(){ //Function for the save button
+  let currentDate = new Date(); //gets the date 
+  let entryCount = count + " - "; //saves the current count and adds a dash (-)
 
-  dateNow.style.display = "block";
-  dateNow.innerHTML = currentDate;
+  dateNow.style.display = "block"; //Displays the Date
+  dateNow.innerHTML = currentDate; //Prints the date
 
   if(count === previousCount){
+      //Sets a condition that if the numbers are save multiple times, it is invalid
       alert("INVALID, NUMBERS MUST NOT BE REPEATED", "danger");
   }
 
   else{
-      previousCount = count;
-      saveEl.innerHTML = saveEl.innerHTML + " " + entryCount;
+      //But if the numbers are not repeated, it executes the else statement
+      previousCount = count; //assigns the count to the variable previousCount
+      saveEl.innerHTML = saveEl.innerHTML + " " + entryCount; //Prints the saved Entries
   }
 }
 
 
 //CODE TO CLEAR AND SET THE COUNT INTO ZERO, RESETTING THE WHOLE FUNCTION EXCEPT FOR THE SAVE ENTRIES
 function clear(){
-    count = 0;
-    countEl.innerHTML = count;
+    count = 0; //set the count to zero
+    countEl.innerHTML = count; //prints the zero count
 
 }
 
-var clearButton = document.getElementById('clear-btn');
-clearButton.addEventListener('click', clear);
+var clearButton = document.getElementById('clear-btn'); //gets the element of the button to clear
+clearButton.addEventListener('click', clear); //adds execution of the clear button and executes the
+                                              // clear function
 
 
 //-------------------------------------------------------
