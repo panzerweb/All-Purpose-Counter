@@ -4,6 +4,8 @@ let saveEl = document.getElementById("save-el"); //Gets the element of a text fo
 
 let dateNow = document.getElementById("date-el"); //Gets the element that specifies date
 
+let btnClick = 0; 
+
 let count = 0; //initializes count to zero
 let previousCount = 0; //Checks count for comparison
 
@@ -33,10 +35,21 @@ function save(){ //Function for the save button
 
 //CODE TO CLEAR AND SET THE COUNT INTO ZERO, RESETTING THE WHOLE FUNCTION EXCEPT FOR THE SAVE ENTRIES
 function clear(){
+    btnClick++;
     count = 0; //set the count to zero
     countEl.innerHTML = count; //prints the zero count
     previousCount = 0; //sets the previous count to zero so you can repeat numbers if you clear a count
+
+    if(btnClick === 2){
+      saveEl.innerHTML = saveEl.innerHTML = ""; //Removes the paragraph text of the previous entry
+      let saveText = saveEl.innerText; // gets the content or value of the save-el element and stores it in this variable
+      let newText = saveText.replace(/\d+ - /g, ''); //Remove the numbers from the text using a regular expression
+      saveEl.innerText = "Previous Entries: " + newText; //Update the text content of the save-el element with the modified text
+
+      btnClick = 0;
+    }
 }
+
 
 var clearButton = document.getElementById('clear-btn'); //gets the element of the button to clear
 clearButton.addEventListener('click', clear); //adds execution of the clear button and executes the
