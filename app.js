@@ -29,7 +29,9 @@ function save(){ //Function for the save button
       //But if the numbers are not repeated, it executes the else statement
       previousCount = count; //assigns the count to the variable previousCount
       saveEl.innerHTML = saveEl.innerHTML + " " + entryCount; //Prints the saved Entries
+      btnClick = 0; //resets the double-clicking condition in the Clear Function
   }
+
 }
 
 
@@ -39,6 +41,7 @@ function clear(){
     count = 0; //set the count to zero
     countEl.innerHTML = count; //prints the zero count
     previousCount = 0; //sets the previous count to zero so you can repeat numbers if you clear a count
+
 
     if(btnClick === 2){
       saveEl.innerHTML = saveEl.innerHTML = ""; //Removes the paragraph text of the previous entry
