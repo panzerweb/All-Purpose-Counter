@@ -40,6 +40,8 @@ function clear(){
     countEl.innerHTML = count; //prints the zero count
     previousCount = 0; //sets the previous count to zero so you can repeat numbers if you clear a count
 
+        alert("Double Click if you want to remove entries", "warning");
+
     if(btnClick === 2){
       saveEl.innerHTML = saveEl.innerHTML = ""; //Removes the paragraph text of the previous entry
       let saveText = saveEl.innerText; // gets the content or value of the save-el element and stores it in this variable
@@ -47,6 +49,7 @@ function clear(){
       saveEl.innerText = "Previous Entries: " + newText; //Update the text content of the save-el element with the modified text
 
       btnClick = 0;
+
     }
 }
 
