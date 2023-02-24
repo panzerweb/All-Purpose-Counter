@@ -40,7 +40,7 @@ function clear(){
     countEl.innerHTML = count; //prints the zero count
     previousCount = 0; //sets the previous count to zero so you can repeat numbers if you clear a count
 
-        alert("Double Click if you want to remove entries", "warning");
+        alert("Double Click if you want to remove all entries", "warning");
 
     if(btnClick === 2){
       saveEl.innerHTML = saveEl.innerHTML = ""; //Removes the paragraph text of the previous entry
