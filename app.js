@@ -4,6 +4,7 @@ let saveEl = document.getElementById("save-el"); //Gets the element of a text fo
 
 let dateNow = document.getElementById("date-el"); //Gets the element that specifies date
 
+
 let btnClick = 0; 
 
 let count = 0; //initializes count to zero
@@ -15,15 +16,23 @@ function increment(){ //Function for the Increment button, to increment count.
 }
 
 function save(){ //Function for the save button
-  let currentDate = new Date(); //gets the date 
+       const currentDate = new Date();
+       const year = currentDate.getFullYear();
+       const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+       const day = String(currentDate.getDate()).padStart(2, '0');
   let entryCount = count + " - "; //saves the current count and adds a dash (-)
 
   dateNow.style.display = "block"; //Displays the Date
-  dateNow.innerHTML = currentDate; //Prints the date
+  dateNow.innerHTML = `${year}-${month}-${day}`; //Prints the date
+
 
   if(count === previousCount){
       //Sets a condition that if the numbers are save multiple times, it is invalid
-      alert("INVALID, NUMBERS MUST NOT BE REPEATED, CLICK THE CLEAR BUTTON FIRST!", "danger");
+      // alert("INVALID, NUMBERS MUST NOT BE REPEATED, CLICK THE CLEAR BUTTON FIRST!", "danger");
+      let myToast = new bootstrap.Toast(document.getElementById('myToast'));
+
+      myToast.show();
+
   }
   else{
       //But if the numbers are not repeated, it executes the else statement
@@ -61,23 +70,23 @@ clearButton.addEventListener('click', clear); //adds execution of the clear butt
 
 
 //-------------------------------------------------------
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+// const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
-const alert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert" style="font-size: 1.2rem;">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
+// const alert = (message, type) => {
+//   const wrapper = document.createElement('div')
+//   wrapper.innerHTML = [
+//     `<div class="alert alert-${type} alert-dismissible" role="alert" style="font-size: 1.2rem;">`,
+//     `   <div>${message}</div>`,
+//     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+//     '</div>'
+//   ].join('')
 
-  alertPlaceholder.append(wrapper)
-}
+//   alertPlaceholder.append(wrapper)
+// }
 
-const alertTrigger = document.getElementById('save-btn')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-  })
-}
+// const alertTrigger = document.getElementById('save-btn')
+// if (alertTrigger) {
+//   alertTrigger.addEventListener('click', () => {
+//   })
+// }
 

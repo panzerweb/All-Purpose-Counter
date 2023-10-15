@@ -20,9 +20,9 @@
             <div class="col-lg-6 text-center" id="title-column">
                 <h1>ALL PURPOSE COUNTER</h1>
             </div>
-            <div id="liveAlertPlaceholder">
-              <!--This is for the alert if Invalid input-->
-          </div>
+            <!-- <div id="liveAlertPlaceholder">
+              This is for the alert if Invalid input
+            </div> -->
             <div class="col-lg-6 text-center" id="title-column2">
               
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="help-icon" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -79,6 +79,26 @@
       </div>
     </div>
   </div>
+
+  <!--todo TOAST-->
+  <div class="toast bg-secondary" role="alert" aria-live="assertive" aria-atomic="true" id="myToast" data-bs-autohide ="false">
+    <div class="toast-header bg-danger">
+        <strong class="me-auto">WARNING!</strong>
+        <small>Just Now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        <h1 class="text-center mb-5">WARNING<i class="bi bi-exclamation-triangle-fill"></i></h1>
+        <h4 class="text-center">Repeated Numbers detected!</h4>
+        <p class="text-center fs-5">Do not save multiple similar numbers.</p>
+        <hr>
+        <div class="toast-footer">
+            <p class="text-center">A project created by:</p>
+            <p class="fw-bold text-center">Panzerweb</p>
+        </div>
+    </div>
+</div>
+
 
   <!--FOOTER SECTION-->
   <footer class="mt-5 text-light" id="footer-background">
